@@ -16,7 +16,8 @@ inherit
 
 	HMS_INTERVAL
 		undefine
-			duration
+			duration,
+			out
 		redefine
 			default_create,
 			time_anchor,

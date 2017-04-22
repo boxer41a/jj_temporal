@@ -19,6 +19,13 @@ inherit
 
 feature -- Access
 
+feature -- Access
+
+	as_string: STRING
+			-- The time represented as a string, ideally with not extra characters.
+		deferred
+		end
+
 	negative: like Current
 			-- The negative value of this duration
 		do

@@ -1,6 +1,7 @@
 note
 	description: "[
 		Stop-watch type object.
+		Create the object and call `reset' to use.
 		]"
 	author:		"Jimmy J. Johnson"
 	copyright:	"Copyright 2009, Jimmy J. Johnson"
@@ -80,6 +81,7 @@ feature -- Basic operations
 			not_running: not is_running
 		do
 			is_running := True
+			start_imp.set_now_utc_fine
 		ensure
 			is_running: is_running
 		end
@@ -92,7 +94,8 @@ feature -- Basic operations
 			is_running := False
 			finish_imp.set_now_utc_fine
 			cumulative := cumulative + duration
-			mark_lap
+--			start_imp.copy (finish)
+-- 			mark_lap
 		ensure
 			is_stopped: not is_running
 		end

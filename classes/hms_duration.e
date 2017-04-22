@@ -26,6 +26,12 @@ create
 
 feature -- Access
 
+	as_string: STRING_8
+			-- The time represented as a string.
+		do
+			Result := hours.out + ":" + minutes.out + ":" + seconds.out + "." + milliseconds.out
+		end
+
 	hours: INTEGER
 			-- The number of hours in this DURATION
 

@@ -4,7 +4,7 @@
 		<root all_classes="true"/>
 		<option warning="true" full_class_checking="false" is_attached_by_default="true" void_safety="all">
 		</option>
-		<library name="base" location="$ISE_LIBRARY\library\base\base-safe.ecf"/>
+		<library name="base-safe" location="$ISE_LIBRARY\library\base\base-safe.ecf"/>
 		<cluster name="jj_temporal" location=".\" recursive="true">
 			<file_rule>
 				<exclude>/demo$</exclude>

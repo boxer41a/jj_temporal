@@ -17,7 +17,8 @@ inherit
 
 	YMD_DURATION
 		rename
-			set as ymd_set
+			set as ymd_set,
+			as_string as as_ymd_string
 		redefine
 			default_create,
 			zero, one,
@@ -30,7 +31,8 @@ inherit
 
 	HMS_DURATION
 		rename
-			set as hms_set
+			set as hms_set,
+			as_string as as_hms_string
 		redefine
 			default_create,
 			zero, one,
@@ -39,6 +41,8 @@ inherit
 			add, sub, multiply, divide, div, mod, negate, percent_of,
 			is_less,
 			normalize
+		select
+			as_hms_string
 		end
 
 create
@@ -53,6 +57,12 @@ feature {NONE} -- Initialization
 		end
 
 feature -- Access
+
+	as_string: STRING_8
+			-- The time represented as a string.
+		do
+			Result := as_ymd_string + ":" + as_hms_string
+		end
 
 	zero: like Current
 			-- Neutral element for "+" and "-"

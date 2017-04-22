@@ -34,6 +34,12 @@ feature {NONE} -- Initialization
 
 feature -- Access
 
+	as_string: STRING_8
+			-- The time represented as a string.
+		do
+			Result := years.out + ":" + months.out + ":" + days.out
+		end
+
 	years: INTEGER
 		-- Number of years part.
 		-- Does not consider the months or days.

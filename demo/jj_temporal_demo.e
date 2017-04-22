@@ -19,6 +19,8 @@ feature {NONE} -- Initialization
 
 	make
 			-- Initialize `Current'.
+		local
+			i: INTEGER
 		do
 			create date
 			create time
@@ -32,9 +34,34 @@ feature {NONE} -- Initialization
 			io.put_string (date_time.out)
 
 			create ymd_formatter
+			create timer_1
+			create timer_2
+			timer_1.reset
+			timer_2.reset
 
-			io.put_string ("The formatted date = ")
-			io.put_string (ymd_formatter.to_string (date) + "%N")
+			from i := 1
+			until i > 10
+			loop
+				io.put_string ("i = " + i.out + "%N")
+				timer_1.run
+				ee.sleep (100)
+				timer_1.stop
+				timer_2.run
+				ee.sleep (1_000_000_000)
+				timer_2.stop
+				io.put_string ("timer_1.cumulative = " + timer_1.cumulative.as_seconds.out)
+				io.new_line
+				io.put_string ("timer_2.cumulative = " + timer_2.cumulative.as_seconds.out)
+				io.new_line
+				i := i + 1
+			end
+			io.put_string ("timer_1.cumulative = " + timer_1.cumulative.as_seconds.out)
+			io.put_string (" %T")
+			io.put_string ("timer_2.cumulative = " + timer_2.cumulative.as_seconds.out)
+			io.new_line
+
+--			io.put_string ("The formatted date = ")
+--			io.put_string (ymd_formatter.to_string (date) + "%N")
 		end
 
 feature -- Access
@@ -51,8 +78,11 @@ feature -- Access
 	ymd_formatter: YMD_TIME_FORMATTER
 			-- To test the gobo parsers
 
+	timer_1, timer_2: HMS_TIMER
 
-feature {PERSON} -- Implementation
-
+	ee: EXECUTION_ENVIRONMENT
+		once
+			create Result
+		end
 
 end
