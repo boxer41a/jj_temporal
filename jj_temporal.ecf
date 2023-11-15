@@ -1,10 +1,15 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
-<system xmlns="http://www.eiffel.com/developers/xml/configuration-1-11-0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.eiffel.com/developers/xml/configuration-1-11-0 http://www.eiffel.com/developers/xml/configuration-1-11-0.xsd" name="jj_temporal" uuid="1C5069C0-C04D-4077-8193-FB226A11EEE7" library_target="jj_temporal">
+<system xmlns="http://www.eiffel.com/developers/xml/configuration-1-21-0"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xsi:schemaLocation="http://www.eiffel.com/developers/xml/configuration-1-21-0 http://www.eiffel.com/developers/xml/configuration-1-21-0.xsd"
+		name="jj_temporal"
+		uuid="1C5069C0-C04D-4077-8193-FB226A11EEE7"
+		library_target="jj_temporal">
 	<target name="jj_temporal">
 		<root all_classes="true"/>
-		<option warning="true" full_class_checking="false" is_attached_by_default="true" void_safety="all">
+		<option warning="warning" full_class_checking="true" is_attached_by_default="true" void_safety="all">
 		</option>
-		<library name="base-safe" location="$ISE_LIBRARY\library\base\base-safe.ecf"/>
+		<library name="base" location="$ISE_LIBRARY\library\base\base.ecf"/>
 		<cluster name="jj_temporal" location=".\" recursive="true">
 			<file_rule>
 				<exclude>/demo$</exclude>

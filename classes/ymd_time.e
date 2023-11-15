@@ -23,7 +23,6 @@ inherit
 			from_integer as from_days
 		redefine
 			default_create,
-			is_less,
 			is_valid,
 			duration_anchor,
 			interval_anchor

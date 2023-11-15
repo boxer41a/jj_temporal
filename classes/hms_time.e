@@ -21,8 +21,6 @@ inherit
 			as_integer as as_seconds
 		redefine
 			default_create,
-			set_now_utc_fine,
-			is_less,
 			is_valid,
 			duration_anchor,
 			interval_anchor

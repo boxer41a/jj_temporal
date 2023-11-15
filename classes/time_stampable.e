@@ -38,7 +38,7 @@ feature -- Access
 			-- Unique (hopefully) object id based on the creation time of the object.
 			-- Concatination of Current's `generating_type' and `time_stamp'.
 		do
-			Result := generating_type + " " + timestamp.as_string
+			Result := generating_type.name.to_string_8 + " " + timestamp.as_string
 		end
 
 	timestamp: YMDHMS_TIME
