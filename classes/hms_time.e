@@ -42,6 +42,11 @@ feature {NONE} -- Initialization
 	default_create
 			-- Create an instance with time 00:00:00 (i.e. midnight).
 		do
+			hour := 0
+			minute := 0
+			second := 0
+			millisecond := 0
+			overflow := 0
 		end
 
 feature -- Access
@@ -171,7 +176,7 @@ feature -- Element Change
 			hour_valid: 0 <= h and h <= 23
 			minute_valid: 0 <= m and m <= 59
 			second_valid: 0 <= s and s <= 59
-			millisecond_valid: 0 <= mil and mil <= 999999
+			millisecond_valid: 0 <= mil and mil <= 999
 		do
 			hour := h;
 			minute := m;
